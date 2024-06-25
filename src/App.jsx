@@ -9,13 +9,13 @@ function Square({value,onSquareClick}){
           </button>);
 }
 export default function Board() { 
-  if(square(i)){
-    return;
-  }
   const [square,setSquare] = useState(Array(9).fill(null));
   const [xIsNext,setXIsNext] = useState(true);
 
     function handleClick(i){
+      if(square(i)){
+        return;
+      }
      const nextSquares = square.slice();
      if(xIsNext){
       nextSquares[i] = "X";
